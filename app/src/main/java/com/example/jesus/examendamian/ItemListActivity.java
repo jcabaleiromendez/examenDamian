@@ -32,6 +32,7 @@ public class ItemListActivity extends AppCompatActivity
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
+    //esta es la variable que controla si se muestra 1 o dos paneles
     private boolean mTwoPane;
 
     @Override
