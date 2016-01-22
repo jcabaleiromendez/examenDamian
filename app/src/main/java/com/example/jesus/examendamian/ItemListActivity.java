@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.Toast;
 
 
 /**
@@ -76,6 +77,13 @@ public class ItemListActivity extends AppCompatActivity
      */
     @Override
     public void onItemSelected(String id) {
+        //esta parte no creo que funcione pero te lo pongo por si acaso
+                Boolean bool = getResources().getBoolean(R.bool.mTwoPane);
+                if (bool) {
+                    //creamos una toast para mandar el mensaje cuando esta en horizontal
+                   Toast.makeText(ItemListActivity.this, "la tablet esta en horizontal",
+                           Toast.LENGTH_SHORT).show();
+                }
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
