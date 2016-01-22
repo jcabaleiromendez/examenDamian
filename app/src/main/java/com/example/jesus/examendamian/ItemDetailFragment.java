@@ -1,6 +1,7 @@
 package com.example.jesus.examendamian;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -68,7 +69,15 @@ public class ItemDetailFragment extends Fragment {
                    public void onClick(View v) {
                        ItemListFragment frag = (ItemListFragment) getFragmentManager().findFragmentById(R.id.item_list);//Recogemos el fragment de la lista
 
+
+
                        if (frag == null || !frag.isInLayout()) {
+                          //creo un nuevo intent llamado intResultado , mando el resultado y cierro la activity
+                           Intent intResultado = new Intent();
+                           intResultado.putExtra("", "Cerrando");
+                           getActivity().setResult(Activity.RESULT_OK,intResultado);
+
+                            //esta linea ya estaba pero es la que me cierra la activity
                            getActivity().finish();
                        } else {
                            //con la siguiente linea dejaremos en blanco el TextView
